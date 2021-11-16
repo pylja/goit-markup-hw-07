@@ -4,51 +4,46 @@
     border-bottom-color: #ececec;
   }
   
-  .header-container {
+  .header__container {
     display: flex;
     align-items: center;
   }
   
-  .header-navigation {
+  .header__navigation {
     display: flex;
     align-items: center;
   }
   
-  .header-logo {
+  .logo--header {
     padding-top: 24px;
     padding-bottom: 24px;
-  
-    font-family: Raleway, sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
-    letter-spacing: 0.03em;
-    color: var(--accent-color);
   }
-  
-  .span-logo {
+
+  .logo--color {
     color: var(--second-text-color);
   }
   
-  .header-list {
+  .header__list {
     display: flex;
     margin-left: 93px;
     padding-left: 0px;
+
+    & .header__item:not(:last-child) {
+      margin-right: 50px;
+    }
   }
-  
-  .header-list .item:not(:last-child) {
-    margin-right: 50px;
+
+  .header__item {
+    position: relative;
   }
-  
-  .header-item {
+
+  .header__link {
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
   
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
+   
+    @include font(500, 14px, 1.14, 0.02em);
     color: var(--second-text-color);
   
     transition-property: color;
@@ -64,15 +59,15 @@
  
  
   
-  .header-item.current {
+  .header__link.current {
     color: var(--accent-color);
   }
   
-  .item {
+  .contact__item {
     position: relative;
   }
   
-  .header-item.current::after {
+  .header__link.current::after {
     content:'';
     display: block;
     height: 4px;
@@ -84,17 +79,18 @@
     bottom: -1px;
   }
   
-  .contact-list {
+  .contact__list {
     display: flex;
     text-align: center;
     margin-left: auto;
+
+    & .contact__item + .contact__item{
+      margin-left: 50px;
+    }
   }
   
-  .contact-list .item + .item {
-    margin-left: 50px;
-  }
   
-  .item-svg {
+  .contact__svg {
     margin-right: 10px;
     fill: var(--primary-text-color);
   
@@ -102,20 +98,19 @@
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-    .header-contact:hover &,
-    .header-contact:focus & {
+    .contact__link:hover &,
+    .contact__link:focus & {
       fill: var(--accent-color);
     }
   }
   
-  .header-contact {
+
+  .contact__link {
     display: flex;
     align-items: center;
   
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
+    
+    @include font(500, 14px, 1.14, 0.02em);
     color: var(--primary-text-color);
   
     padding-top: 32px;
